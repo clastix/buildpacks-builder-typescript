@@ -1,0 +1,26 @@
+[[buildpacks]]
+uri = "urn:cnb:registry:heroku/nodejs-engine"
+
+[[buildpacks]]
+uri = "urn:cnb:registry:heroku/nodejs-npm"
+
+[[buildpacks]]
+uri = "urn:cnb:registry:heroku/nodejs-typescript"
+
+[[order]]
+  [[order.group]]
+    id = "heroku/nodejs-engine"
+    version = "0.7.5"
+  [[order.group]]
+    id = "heroku/nodejs-npm"
+    version = "0.4.5"
+  [[order.group]]
+    id = "heroku/nodejs-typescript"
+    version = "0.2.3"
+
+[stack]
+  id = "heroku-20"
+  # This image is used at build-time
+  build-image = "heroku/buildpacks:20"
+  # This image is used at runtime
+  run-image = "heroku/buildpacks:20"
